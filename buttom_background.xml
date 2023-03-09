@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#ff9900" />
+</shape>
+
+'Es código es solo para el diseño del botón por lo que será necesario crear
+una nueva carpeta llamada "drawable" dentro de "res" que contendrá el archivo llamado "buttom_background.xml"'
