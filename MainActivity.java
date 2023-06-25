@@ -32,3 +32,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+version 2 ############################
+package com.cixteam.balance;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+//import com.google.android.gms.fonts.Fonts;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+      //  Fonts.initialize(getApplicationContext());
+    }
+}
