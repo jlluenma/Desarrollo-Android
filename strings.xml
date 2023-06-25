@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="saludo">Bienvenido</string>
+    <string name="nombre">Ingresa tu nombre</string>
+    <string name="nombre_tienda">Ingresa el nombre de tu tienda</string>
+    <string name="btn_ok">Ingresar</string>
+    <string name="btn_open_scanner">Abrir scanner</string>
+    <string name="home">Inicio</string>
+</resources>
