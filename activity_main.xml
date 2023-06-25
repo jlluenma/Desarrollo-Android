@@ -47,16 +47,45 @@
         tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/apellidos"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameUsr" />
+
+    <EditText
+        android:id="@+id/lastNameUsr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:autofillHints="no"
+        android:ems="8"
+        android:inputType="text"
+        android:minWidth="200dp"
+        android:minHeight="48dp"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    <TextView
         android:id="@+id/subtituloTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/nombre_tienda"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameUsr" />
+        app:layout_constraintTop_toBottomOf="@id/lastNameUsr" />
 
     <EditText
         android:id="@+id/nameShop"
@@ -73,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/subtituloTextView"
         tools:ignore="LabelFor,SpeakableTextPresentCheck"
-        android:autofillHints="name" />
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btnOpenActivity"
