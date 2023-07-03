@@ -6,4 +6,11 @@
     <string name="nombre_tienda">Ingresa el nombre del negocio</string>
     <string name="btn_ingresar">Ingresar</string>
     <string name="saludo">Bienvenid@, </string>
+    <string name="btn1">Ventas</string>
+    <string name="btn2">Stock</string>
+    <string name="btn3">Bienvenid@, </string>
+    <string name="myProducts">Mis productos</string>
+    <string name="stockListEmpty">La lista de productos está vacía</string>
+    <string name="btnScan">Scanea nuevos productos</string>
+    <string name="btnList">Agrega productos manualmente</string>
 </resources>
