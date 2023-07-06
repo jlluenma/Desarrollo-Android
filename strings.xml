@@ -13,4 +13,5 @@
     <string name="stockListEmpty">La lista de productos está vacía</string>
     <string name="btnScan">Scanea nuevos productos</string>
     <string name="btnList">Agrega productos manualmente</string>
+    <string name="cartel">Aquí se mostrarán los códigos</string>
 </resources>
