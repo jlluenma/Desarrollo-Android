@@ -17,104 +17,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="5dp"
-        android:text="@string/nombre"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
-
     <EditText
         android:id="@+id/nameUsr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
+        android:layout_marginBottom="40dp"
         android:autofillHints="name"
         android:ems="8"
+        android:hint="@string/nombre"
         android:inputType="text"
-        android:minWidth="200dp"
+        android:minWidth="280dp"
         android:minHeight="48dp"
-        android:textSize="15sp"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/lastNameUsr"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView2"
         tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="18dp"
-        android:text="@string/apellidos"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameUsr" />
 
     <EditText
         android:id="@+id/lastNameUsr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="18dp"
+        android:layout_marginBottom="40dp"
         android:autofillHints="no"
         android:ems="8"
+        android:hint="@string/apellidos"
         android:inputType="text"
-        android:minWidth="200dp"
+        android:minWidth="280dp"
         android:minHeight="48dp"
-        android:textSize="15sp"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/nameShop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.182"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView3"
         tools:ignore="LabelFor,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/subtituloTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="18dp"
-        android:text="@string/nombre_tienda"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lastNameUsr" />
 
     <EditText
         android:id="@+id/nameShop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="18dp"
         android:layout_marginEnd="18dp"
+        android:layout_marginBottom="240dp"
         android:ems="8"
+        android:hint="@string/nombre_tienda"
+        android:importantForAutofill="no"
         android:inputType="text"
-        android:minWidth="200dp"
+        android:minWidth="280dp"
         android:minHeight="48dp"
-        android:textSize="15sp"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/subtituloTextView"
-        tools:ignore="LabelFor,SpeakableTextPresentCheck"
-        android:importantForAutofill="no" />
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/btnOpenActivity"
@@ -123,12 +84,13 @@
         android:layout_margin="60dp"
         android:layout_marginBottom="190dp"
         android:backgroundTint="@color/red"
+        android:fontFamily="sans-serif-condensed"
         android:text="@string/btn_ingresar"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:fontFamily="sans-serif-condensed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameShop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
