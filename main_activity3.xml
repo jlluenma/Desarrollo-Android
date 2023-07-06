@@ -19,25 +19,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/lista_vacía"
-        android:layout_width="wrap_content"
+
+    <EditText
+        android:id="@+id/etCodigo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:text="@string/stockListEmpty"
-        android:textColor="@color/grey"
-        android:textSize="19sp"
+        android:gravity="center"
+        android:hint="AQUI SE MOSTRARA EL CODIGO LEIDO"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/btnScanner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/misProductos" />
 
     <Button
         android:id="@+id/btnScanner"
         android:layout_width="320dp"
         android:layout_height="79dp"
-        android:layout_margin="60dp"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="@color/red"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/btnScan"
@@ -52,7 +55,7 @@
         android:id="@+id/btnList"
         android:layout_width="320dp"
         android:layout_height="79dp"
-        android:layout_margin="60dp"
+        android:layout_marginBottom="45dp"
         android:backgroundTint="@color/red"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/btnList"
