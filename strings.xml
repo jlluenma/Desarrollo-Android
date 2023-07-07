@@ -14,4 +14,7 @@
     <string name="btnScan">Scanea nuevos productos</string>
     <string name="btnList">Agrega productos manualmente</string>
     <string name="cartel">Aquí se mostrarán los códigos</string>
+    <string name="lector">Usar el Scanner</string>
+    <string name="escribirVenta">Escribir ventas</string>
+    <string name="ventasInicio">Mis ventas</string>
 </resources>
