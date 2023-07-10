@@ -2,7 +2,6 @@ package com.cixteam.balance;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -21,14 +20,16 @@ public class MainActivity2 extends AppCompatActivity {
         userTextView.setText(userInput);
 
         Button btnOpenStock = findViewById(R.id.btnOpenStock);
-        btnOpenStock.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Abrir la nueva actividad (MainActivity3)
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
-                startActivity(intent);
-            }
+        btnOpenStock.setOnClickListener(v -> {
+            // Abrir la nueva actividad (MainActivity3)
+            Intent intent1 = new Intent(MainActivity2.this, MainActivity3.class);
+            startActivity(intent1);
         });
-
+        Button btnOpenSales = findViewById(R.id.btnOpenSales);
+        btnOpenSales.setOnClickListener(v -> {
+            // Abrir la nueva actividad (MainActivity4)
+            Intent intent2 = new Intent(MainActivity2.this, MainActivity4.class);
+            startActivity(intent2);
+        });
     }
 }
