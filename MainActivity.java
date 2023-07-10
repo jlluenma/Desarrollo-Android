@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.widget.EditText;
 
 
-//import com.google.android.gms.fonts.Fonts;
-
 public class MainActivity extends AppCompatActivity {
 
     private EditText nameUsr;
@@ -20,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      //  Fonts.initialize(getApplicationContext());
         nameUsr = findViewById(R.id.nameUsr);
 
         Button btnOpenActivity = findViewById(R.id.btnOpenActivity);
