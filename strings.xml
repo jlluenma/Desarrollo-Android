@@ -10,11 +10,15 @@
     <string name="btn2">Stock</string>
     <string name="btn3">Bienvenid@, </string>
     <string name="myProducts">Mis productos</string>
-    <string name="stockListEmpty">La lista de productos está vacía</string>
     <string name="btnScan">Scanea nuevos productos</string>
     <string name="btnList">Agrega productos manualmente</string>
     <string name="cartel">Aquí se mostrarán los códigos</string>
     <string name="lector">Usar el Scanner</string>
     <string name="escribirVenta">Escribir ventas</string>
     <string name="ventasInicio">Mis ventas</string>
+    <string name="registrarProductos">Registre sus productos</string>
+    <string name="nameProduct">Nombre del producto</string>
+    <string name="priceProduct">Precio unitario (S/)</string>
+    <string name="stockProduct">Stock</string>
+    <string name="tipo">Tipo de producto: </string>
 </resources>
