@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:textSize="22sp">
-
+    tools:context=".MainActivity3">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/misProductos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="30dp"
         android:fontFamily="sans-serif-light"
-        android:text="@string/saludo"
+        android:text="@string/myProducts"
         android:textSize="29sp"
         android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,57 +20,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/userTextView"
-        android:layout_width="305sp"
-        android:layout_height="30sp"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="7dp"
-        android:layout_marginEnd="7dp"
-        android:text=""
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnOpenStock"
+
+    <EditText
+        android:id="@+id/etCodigo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="AQUI SE MOSTRARA EL CODIGO LEIDO"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnScanner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.121" />
+        app:layout_constraintTop_toBottomOf="@+id/misProductos"
+        android:importantForAutofill="no"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <Button
-        android:id="@+id/btnOpenSales"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="138dp"
-        android:layout_height="139dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="43dp"
+        android:id="@+id/btnScanner"
+        android:layout_width="320dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="25dp"
         android:backgroundTint="@color/red"
         android:fontFamily="sans-serif-condensed"
-        android:text="@string/btn1"
+        android:text="@string/btnScan"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toTopOf="@+id/btnList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnOpenStock"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="138dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginStart="43dp"
-        android:layout_marginEnd="8dp"
+        android:id="@+id/btnList"
+        android:layout_width="320dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="45dp"
         android:backgroundTint="@color/red"
         android:fontFamily="sans-serif-condensed"
-        android:text="@string/btn2"
+        android:text="@string/btnList"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.821"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:ignore="TextSizeCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
