@@ -10,6 +10,10 @@ import com.cixteam.balance.databinding.ActivityMain3Binding;
 import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+
 
 public class MainActivity3 extends AppCompatActivity {
 
@@ -29,6 +33,15 @@ public class MainActivity3 extends AppCompatActivity {
        binding = ActivityMain3Binding.inflate(getLayoutInflater());
        setContentView(binding.getRoot());
         binding.btnScanner.setOnClickListener(view -> escanear());
+
+        Button btnList = findViewById(R.id.btnList);
+        btnList.setOnClickListener(v -> {
+            // Abrir la nueva actividad (MainActivity5)
+            Intent intent = new Intent(MainActivity3.this, MainActivity5.class);
+            startActivity(intent);
+        });
+
+
     }
     public void escanear(){
         ScanOptions options = new ScanOptions();
