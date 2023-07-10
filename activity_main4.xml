@@ -14,6 +14,7 @@
         android:fontFamily="sans-serif-light"
         android:text="@string/ventasInicio"
         android:textSize="29sp"
+        android:textColor="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
