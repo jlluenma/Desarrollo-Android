@@ -15,6 +15,8 @@
         android:text="@string/myProducts"
         android:textSize="29sp"
         android:textColor="@color/red"
+        android:gravity="center"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,22 +24,40 @@
 
 
     <EditText
-        android:id="@+id/etCodigo"
+        android:id="@+id/editTextNombreProducto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="AQUI SE MOSTRARA EL CODIGO LEIDO"
+        android:importantForAutofill="no"
         android:minHeight="48dp"
         android:textColor="#000000"
         android:textColorHint="#000000"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnScanner"
+        android:hint=""
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTipoProducto"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/misProductos"
+        app:layout_constraintVertical_bias="0.907"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTipoProducto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:importantForAutofill="no"
-        tools:ignore="VisualLintTextFieldSize" />
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textStyle="bold"
+        android:hint=""
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toTopOf="@+id/btnScanner"
+        app:layout_constraintTop_toBottomOf="@+id/misProductos"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/btnScanner"
