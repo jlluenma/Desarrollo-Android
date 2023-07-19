@@ -3,6 +3,7 @@ package com.cixteam.balance;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -16,7 +17,6 @@ import com.journeyapps.barcodescanner.ScanOptions;
 import android.content.Intent;
 import android.widget.Button;
 
-
 public class MainActivity3 extends AppCompatActivity {
 
     private final ActivityResultLauncher<ScanOptions> barcodeLauncher = registerForActivityResult(new ScanContract(), result -> {
@@ -28,13 +28,12 @@ public class MainActivity3 extends AppCompatActivity {
             DbHelper dbHelper = new DbHelper(this);
             SQLiteDatabase database = dbHelper.getReadableDatabase();
 
+            obtenerDatosProducto(scannedValue);
         }
     });
 
     private DbHelper dbHelper;
     private SQLiteDatabase database;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,14 +75,33 @@ public class MainActivity3 extends AppCompatActivity {
         if (cursor.moveToFirst()) {
             String nombreProducto = getString(cursor.getColumnIndex("nombre"));
             String tipoProducto = getString(cursor.getColumnIndex("tipo"));
-            TextView textViewNombreProducto = findViewById(R.id.editTextNombreProducto);
-            TextView textViewTipoProducto = findViewById(R.id.editTextTipoProducto);
+            TextView editTextNombreProducto = findViewById(R.id.editTextNombreProducto);
+            TextView editTextTipoProducto = findViewById(R.id.editTextTipoProducto);
 
-            textViewNombreProducto.setText(nombreProducto);
-            textViewTipoProducto.setText(tipoProducto);
+            editTextNombreProducto.setText(nombreProducto);
+            editTextTipoProducto.setText(tipoProducto);
+
+            insertarProducto(nombreProducto, tipoProducto, scannedValue);
         }
 
         cursor.close();
+    }
+
+    private void insertarProducto(String nombre, String tipo, String code) {
+        SQLiteDatabase writableDatabase = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("nombre", nombre);
+        values.put("tipo", tipo);
+        values.put("code", code);
+
+        long id = writableDatabase.insert(DbHelper.TABLE_STOCK, null, values);
+        if (id != -1) {
+            Toast.makeText(this, "Producto agregado a la tabla de Stock.", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Error al agregar el producto a la tabla de Stock.", Toast.LENGTH_SHORT).show();
+        }
+        writableDatabase.close();
     }
 
     @Override
@@ -92,6 +110,4 @@ public class MainActivity3 extends AppCompatActivity {
         dbHelper.close();
         database.close();
     }
-    
-    
 }
