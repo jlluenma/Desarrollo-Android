@@ -9,19 +9,24 @@ import androidx.annotation.Nullable;
 
 public class DbHelper extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    // Database version and name
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NOMBRE = "balance.db";
+
+    // Table names
     public static final String TABLE_STOCK = "t_stock";
     public static final String TABLE_PRODUCTS = "t_products";
     public static final String TABLE_SALES = "t_sales";
 
+    // Constructor
     public DbHelper(@Nullable Context context) {
         super(context, DATABASE_NOMBRE, null, DATABASE_VERSION);
     }
 
+    // Method called when the database is created
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        // Crear tabla TABLE_STOCK
+        // Create TABLE_STOCK table with specific columns
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_STOCK + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
@@ -29,14 +34,14 @@ public class DbHelper extends SQLiteOpenHelper {
                 "precio REAL NOT NULL," +
                 "stock REAL NOT NULL)");
 
-        // Crear tabla TABLE_PRODUCTS
+        // Create TABLE_PRODUCTS table with specific columns
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_PRODUCTS + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "tipo TEXT," +
                 "code TEXT)");
 
-        // Insertar registros iniciales en la tabla TABLE_PRODUCTS
+        // Insert initial records into TABLE_PRODUCTS
         insertarProducto(sqLiteDatabase, "PLUMON PIZARRA FABER-CASTELL", "UTILES", "7754111602211");
         insertarProducto(sqLiteDatabase, "CUADERNO", "UTILES", "7754227186483");
         insertarProducto(sqLiteDatabase, "AGUA SAN CARLOS 625ML", "ALIMENTO", "7751580001118");
@@ -44,7 +49,7 @@ public class DbHelper extends SQLiteOpenHelper {
         insertarProducto(sqLiteDatabase, "LAPICERO ARTESCO AZUL", "UTILES", "7750082067769");
         insertarProducto(sqLiteDatabase, "PLUMON VERDE ARTESCO", "UTILES", "7750082002043");
 
-        // Crear tabla TABLE_SALES
+        // Create TABLE_SALES table with specific columns
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_SALES + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
@@ -54,11 +59,13 @@ public class DbHelper extends SQLiteOpenHelper {
                 "code TEXT)");
     }
 
+    // Method called when the database needs to be upgraded (not used here)
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        // Lógica para actualizar la base de datos en futuras versiones
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // Logic for upgrading the database in future versions
     }
 
+    // Helper method to insert a product into the TABLE_PRODUCTS
     private void insertarProducto(SQLiteDatabase sqLiteDatabase, String nombre, String tipo, String code) {
         ContentValues values = new ContentValues();
         values.put("nombre", nombre);
