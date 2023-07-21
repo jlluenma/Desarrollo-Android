@@ -3,6 +3,7 @@ package com.cixteam.balance;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -20,10 +21,12 @@ public class MainActivity4 extends AppCompatActivity {
 
     ActivityMain4Binding binding;
 
+    // Este lanzador se utilizará para obtener el resultado del escaneo
     private final ActivityResultLauncher<ScanOptions> barcodeLauncher = registerForActivityResult(new ScanContract(), result -> {
         String scannedResult = result.getContents(); // Guardar el resultado del escaneo en una variable
 
         if (scannedResult == null) {
+            // Mostrar mensaje si se canceló el escaneo
             Toast.makeText(this, "CANCELADO", Toast.LENGTH_SHORT).show();
         } else {
             // Realizar la consulta a la tabla TABLE_PRODUCTS en el DbHelper
@@ -40,41 +43,47 @@ public class MainActivity4 extends AppCompatActivity {
 
             // Verificar si el cursor contiene algún resultado
             if (cursor.moveToFirst()) {
-                // Obtener los datos (nombre y tipo)
+                // Obtener los datos (nombre y tipo) de la consulta
                 nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre"));
                 tipo = cursor.getString(cursor.getColumnIndexOrThrow("tipo"));
-            }
 
+                // Insertar el producto en la tabla TABLE_SALES
+                ContentValues values = new ContentValues();
+                values.put("nombre", nombre);
+                values.put("tipo", tipo);
+                values.put("importe", 0.0); // Ajusta el valor del importe según corresponda
+                values.put("unidades", 0.0); // Ajusta el valor de las unidades según corresponda
+                values.put("code", scannedResult);
+                db.insert(DbHelper.TABLE_SALES, null, values);
+
+                // Mostrar mensaje de éxito
+                Toast.makeText(this, "PRODUCTO VENDIDO", Toast.LENGTH_SHORT).show();
+            }
             cursor.close();
             db.close();
-
-            // Realizar alguna acción con los datos obtenidos (nombre y tipo) en la actividad 4
-            // Puedes pasar los datos a la actividad 4 utilizando un Intent o almacenarlos en variables globales
-            // Ejemplo de cómo pasar los datos a la actividad 4:
-            Intent intent = new Intent(MainActivity4.this, MainActivity6.class);
-            intent.putExtra("nombreProducto", nombre);
-            intent.putExtra("tipoProducto", tipo);
-            startActivity(intent);
         }
     });
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
+        // Binding para vincular los elementos de la interfaz de usuario
         binding = ActivityMain4Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Configurar el botón para iniciar el escaneo
         binding.btnScanner.setOnClickListener(view -> escanear());
     }
 
+    // Método para navegar a la actividad 6 mediante un botón (no utilizado en el código actual)
     public void btnWriteSales(View view){
         Intent btnWriteSales = new Intent(this, MainActivity6.class);
         startActivity(btnWriteSales);
     }
 
+    // Método para iniciar el escaneo del código de barras
     public void escanear(){
         ScanOptions options = new ScanOptions();
         options.setDesiredBarcodeFormats(ScanOptions.ALL_CODE_TYPES);
@@ -85,4 +94,5 @@ public class MainActivity4 extends AppCompatActivity {
         options.setCaptureActivity(CaptureActivityPortrait.class);
         options.setBarcodeImageEnabled(false);
         barcodeLauncher.launch(options);
-}}
+    }
+}
